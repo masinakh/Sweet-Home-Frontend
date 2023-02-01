@@ -1,7 +1,12 @@
 import React from "react";
 import "./Login.css";
 
+
 const Login = () => {
+  // const handelChange =()=>{}
+    
+  
+
   return (
     <>
       <h1>SWEET HOME</h1>
@@ -15,8 +20,12 @@ const Login = () => {
       <div id="gSignInWrapper">
         <span class="label">Sign in with:</span>
         <div id="customBtn" class="customGPlusSignIn">
+          <button >
+
           <span class="icon"></span>
           <span class="buttonText">Google</span>
+          </button>
+          
         </div>
       </div>
     </>
