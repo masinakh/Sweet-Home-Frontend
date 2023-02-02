@@ -11,10 +11,12 @@ import axios from "axios";
 // import axios from "axios";
 
 function App() {
-  const [member, setMember]= useState()
-  // const [choreList, setChoreList] = useState([]);
-  const [familyList, setFamilyList]= useState([])
-  // const [rewardList, setRewardList] = useState([]);
+  const [member, setMember] = useState();
+  const [choreList, setChoreList] = useState([]);
+  const [selectedChore, setSelectedChore] = useState([]);
+  const [selectedReward, setSelectedReward] = useState([]);
+  const [familyList, setFamilyList] = useState([]);
+  const [rewardList, setRewardList] = useState([]);
   // const URL = "https://sweet-home-backend.herokuapp.com"
 
   const choreList = [
@@ -134,8 +136,6 @@ function App() {
   //     .catch((error) => console.log(error));
   // };
 
-  
-
   // const addReward= (newRewardData) => {
   //   axios
   //     .post(`${URL}/rewards`, newRewardData)
@@ -154,24 +154,92 @@ function App() {
   //       .catch((error) => console.log(error));
   //   };
 
-  const selectMember=(memberId)=>{
+  // const selectMember=(memberId)=>{
+  //   axios
+  //   .get(`${URL}/members/${memberId}`)
+  //   .then((res)=>{
+  //     setMember(member)
+  //   })
+  //   .catch((error) => console.log(error));
+  // }
+
+  const deleteChore = (choreId) => {
     axios
-    .get(`${URL}/members/${memberId}`)
-    .then((res)=>{
-      setMember(member)
-    })
-    .catch((error) => console.log(error));
-  }
+      .delete(`${URL}/chores/${choreId}`)
+      .then((res) => {
+        const newChores = choreList.filter((chore) => chore.id !== choreId);
+        setChoreList(newChores);
+      })
+      .catch((error) => console.log(error));
+  };
+
+  const deleteReward = (rewardId) => {
+    axios
+      .delete(`${URL}/rewards/${rewardId}`)
+      .then((res) => {
+        const newRewards = rewardList.filter(
+          (reward) => reward.id !== rewardId
+        );
+        setRewardList(newRewards);
+      })
+      .catch((error) => console.log(error));
+  };
+
+  const selectChore = (choreId) => {
+    axios
+      .patch(`${URL}/${choreId}/${member.id}`)
+      .then(() => {
+        const newSelectedChore = [...selectedChore];
+        for (const chore of choreList) {
+          if (chore.id === choreId) {
+            newSelectedChore.push(chore);
+          }
+        }
+        setSelectedChore(newSelectedChore);
+      })
+      .catch((error) => console.log(error));
+  };
+
+  const selectReward = (rewardId) => {
+    axios
+      .patch(`${URL}/${rewardId}/${member.id}`)
+      .then(() => {
+        const newSelectedReward = [...selectReward];
+        for (const reward of rewardList) {
+          if (reward.id === rewardId) {
+            newSelectedReward.push(reward);
+          }
+        }
+        setSelectedReward(newSelectedReward);
+      })
+      .catch((error) => console.log(error));
+  };
 
   return (
     <div className="App">
       <Routes>
-        <Route path="/chores" element={<Home choreList={choreList} familyList = {familyList} />} />
+        <Route
+          path="/chores"
+          element={
+            <Home
+              choreList={choreList}
+              familyList={familyList}
+              deleteChore={deleteChore}
+            />
+          }
+        />
         <Route path="/login" element={<Login />} />
         <Route path="/addMember" element={<AddMember />} />
         <Route
           path="/memberAccount"
-          element={<MemberAccount rewardList={rewardList} />}
+          element={
+            <MemberAccount
+              rewardList={rewardList}
+              deleteReward={deleteReward}
+              selectChore={selectChore}
+              selectReward={selectReward}
+            />
+          }
         />
         <Route path="*" element={<NotFound />} />
       </Routes>

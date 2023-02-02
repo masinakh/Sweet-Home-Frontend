@@ -1,17 +1,15 @@
-import React from 'react'
-import {useState , useEffect} from "react";
+import React from "react";
+import { useState, useEffect } from "react";
 import ChoreList from "../components/ChoreList";
-import FamilyList from '../components/FamilyList';
+import FamilyList from "../components/FamilyList";
 
-
-
-const Home = ({choreList, familyList}) => {
+const Home = ({ choreList, familyList, deleteChore }) => {
   return (
     <div>
-      <ChoreList choreList={choreList}/>
-      <FamilyList familyList ={familyList}/>
+      <FamilyList familyList={familyList} />
+      <ChoreList choreList={choreList} deleteChore={deleteChore} />
     </div>
-  )
-}
+  );
+};
 
-export default Home
+export default Home;
