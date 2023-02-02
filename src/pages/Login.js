@@ -1,8 +1,7 @@
 import React from "react";
 import "./Login.css";
 import axios from "axios";
-import { redirect } from "react-router-dom";
-import { redirect } from "react-router-dom";
+
 
 const Login = () => {
   const loginClickHandler = () => {

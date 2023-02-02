@@ -6,9 +6,10 @@ const Chore = ({id, title, points, is_completed}) => {
   return (
     <div className="chore">
       <h4>{title}</h4>
-      <span>{points}</span>
-      <button>Select</button>
-      <button>Delete</button>
+      <span>Points:  {points}</span>
+      <br />
+      <button className='btn'>Select</button>
+      <button className='btn'>Delete</button>
     </div>
   )
 }

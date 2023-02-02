@@ -1,5 +1,9 @@
 .chore {
-background-color: rgb(248, 248, 145);
-margin: 20%;
-}
-
+    background-image: radial-gradient(circle, rgb(128, 208, 219), rgb(101, 177, 215));
+    /* background-image: linear-gradient(to right, rgb(74, 147, 96), rgb(223, 169, 94)); */
+        height: 200px;
+    /* background-color: bisque; */
+    margin: 2%;
+    padding: .25%;
+    text-align: center;
+    }

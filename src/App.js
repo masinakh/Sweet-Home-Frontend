@@ -5,8 +5,8 @@ import Home from "./pages/Home";
 import AddMember from "./pages/AddMember";
 import MemberAccount from "./pages/MemberAccount";
 import NotFound from "./pages/NotFound";
-import { useState, useEffect } from "react";
-import axios from "axios";
+// import { useState, useEffect } from "react";
+// import axios from "axios";
 
 function App() {
   // // const [member, setMember]= useState()
@@ -16,6 +16,24 @@ function App() {
   // const URL = "https://sweet-home-backend.herokuapp.com"
 
   const choreList = [
+    {
+      id: 1,
+      title: "wash the dishes",
+      points: 10,
+      is_completed: false,
+    },
+    {
+      id: 2,
+      title: "walk the dog",
+      points: 20,
+      is_completed: false,
+    },
+    {
+      id: 3,
+      title: "clean your room",
+      points: 30,
+      is_completed: false,
+    },
     {
       id: 1,
       title: "wash the dishes",
@@ -88,6 +106,23 @@ function App() {
   // };
   // useEffect(getAllRewards, []);
 
+  //  const getAllFamily = () => {
+  //   axios
+  //     .get(`${URL}/members`)
+  //     .then((res) => {
+  //       const memberData = res.data.map((member) => {
+  //         return {
+  //           ...member,
+  //         };
+  //       });
+  //       setFamilyList(memberData);
+  //     })
+  //     .catch((error) => {
+  //       console.log(error);
+  //     });
+  // };
+  // useEffect(getAllFamily, []);
+
   // const addChore= (newChoreData) => {
   //   axios
   //     .post(`${URL}/chores`, newChoreData)
@@ -97,6 +132,8 @@ function App() {
   //     .catch((error) => console.log(error));
   // };
 
+  
+
   // const addReward= (newRewardData) => {
   //   axios
   //     .post(`${URL}/rewards`, newRewardData)
@@ -105,6 +142,15 @@ function App() {
   //     })
   //     .catch((error) => console.log(error));
   // };
+
+  // const addFamily= (newFamilyData) => {
+  //     axios
+  //       .post(`${URL}/members`, newFamilyData)
+  //       .then(() => {
+  //         getAllFamily();
+  //       })
+  //       .catch((error) => console.log(error));
+  //   };
 
   return (
     <div className="App">

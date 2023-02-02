@@ -1,0 +1,9 @@
+.reward {
+    background-image: radial-gradient(circle, rgb(128, 208, 219), rgb(101, 177, 215));
+    /* background-color: bisque; */
+    margin: 2%;
+    padding: .25%;
+    text-align: center;
+    height: 200px;
+    }
+    
