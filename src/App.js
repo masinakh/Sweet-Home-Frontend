@@ -74,6 +74,41 @@ const rewardList =[
 // useEffect(getAllChores, []);
 
 
+// const getAllRewards = () =>{
+//   axios.get(`${URL}/rewards`)
+//   .then((res) =>{
+//     const rewardData = res.data.map((reward) => {
+//       return {
+//         ...reward,
+//       };
+//     });
+//     setRewardList(rewardData);
+//   })
+//   .catch((error) => {
+//     console.log(error);
+//   });
+// }
+// useEffect(getAllRewards, []);
+
+
+// const addChore= (newChoreData) => {
+//   axios
+//     .post(`${URL}/chores`, newChoreData)
+//     .then(() => {
+//       getAllChores();
+//     })
+//     .catch((error) => console.log(error));
+// };
+
+// const addReward= (newRewardData) => {
+//   axios
+//     .post(`${URL}/rewards`, newRewardData)
+//     .then(() => {
+//       getAllRewards();
+//     })
+//     .catch((error) => console.log(error));
+// };
+
 
 
   return (
