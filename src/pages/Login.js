@@ -1,11 +1,16 @@
 import React from "react";
 import "./Login.css";
-
+import axios from "axios";
+import { redirect } from "react-router-dom";
 
 const Login = () => {
-  // const handelChange =()=>{}
-    
-  
+  const loginClickHandler = () => {
+    axios.get("http://127.0.0.1:5000/login").then((res) => {
+      // console.log(res.data);
+      // return redirect(res.data.url);
+      window.location.replace(res.data.url);
+    });
+  };
 
   return (
     <>
@@ -20,12 +25,10 @@ const Login = () => {
       <div id="gSignInWrapper">
         <span class="label">Sign in with:</span>
         <div id="customBtn" class="customGPlusSignIn">
-          <button >
-
-          <span class="icon"></span>
-          <span class="buttonText">Google</span>
+          <button onClick={loginClickHandler}>
+            <span class="icon"></span>
+            <span class="buttonText">Google</span>
           </button>
-          
         </div>
       </div>
     </>
