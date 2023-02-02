@@ -43,7 +43,7 @@ const NewFamilyForm = ({ addFamily }) => {
           onChange={handleFormChange}
         ></input>
         <br />
-        <label for="familyRole">This member is:</label>
+        <label for="familyRole">This member is: </label>
         <select name="familyRole" id="parent" onChange={handleFormChange}>
           <option value="Parent">Parent</option>
           <option value="Child">Child</option>

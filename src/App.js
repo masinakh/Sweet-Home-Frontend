@@ -5,13 +5,15 @@ import Home from "./pages/Home";
 import AddMember from "./pages/AddMember";
 import MemberAccount from "./pages/MemberAccount";
 import NotFound from "./pages/NotFound";
-// import { useState, useEffect } from "react";
+import FamilyList from "./components/FamilyList";
+import { useState, useEffect } from "react";
+import axios from "axios";
 // import axios from "axios";
 
 function App() {
-  // // const [member, setMember]= useState()
+  const [member, setMember]= useState()
   // const [choreList, setChoreList] = useState([]);
-  // const [memberList, setMemberList]= useState([])
+  const [familyList, setFamilyList]= useState([])
   // const [rewardList, setRewardList] = useState([]);
   // const URL = "https://sweet-home-backend.herokuapp.com"
 
@@ -152,10 +154,19 @@ function App() {
   //       .catch((error) => console.log(error));
   //   };
 
+  const selectMember=(memberId)=>{
+    axios
+    .get(`${URL}/members/${memberId}`)
+    .then((res)=>{
+      setMember(member)
+    })
+    .catch((error) => console.log(error));
+  }
+
   return (
     <div className="App">
       <Routes>
-        <Route path="/chores" element={<Home choreList={choreList} />} />
+        <Route path="/chores" element={<Home choreList={choreList} familyList = {familyList} />} />
         <Route path="/login" element={<Login />} />
         <Route path="/addMember" element={<AddMember />} />
         <Route
