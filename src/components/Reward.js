@@ -1,10 +1,10 @@
 import React from 'react'
 import PropTypes from "prop-types";
-import "./Chore.css";
+import "./Reward.css";
 
-const Chore = ({id, title, points, is_completed}) => {
+const Reward = ({id, title, points}) => {
   return (
-    <div className="chore">
+    <div className="reward">
       <h4>{title}</h4>
       <span>{points}</span>
       <button>Select</button>
@@ -12,13 +12,12 @@ const Chore = ({id, title, points, is_completed}) => {
     </div>
   )
 }
-Chore.propTypes = {
+Reward.propTypes = {
   id: PropTypes.number.isRequired,
   title: PropTypes.string.isRequired,
   points: PropTypes.number.isRequired,
-  is_completed: PropTypes.bool.isRequired,
   
 };
 
 
-export default Chore
+export default Reward;

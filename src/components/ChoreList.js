@@ -1,13 +1,15 @@
 import React from "react";
-import Chore from "chore";
+import Chore from "./Chore";
 import PropTypes from "prop-types";
+import "./ChoreList.css";
+
 
 const ChoreList = ({ choreList }) => {
   return (
-    <div>
+    <div className="container">
       {choreList.map((chore) => {
         return (
-          <div key={chore.id}>
+          <div key={chore.id} >
             <Chore
               id={chore.id}
               title={chore.title}
