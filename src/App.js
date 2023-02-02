@@ -9,7 +9,7 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 
 function App() {
-  // const [member, setMember]= useState()
+  // // const [member, setMember]= useState()
   // const [choreList, setChoreList] = useState([]);
   // const [memberList, setMemberList]= useState([])
   // const [rewardList, setRewardList] = useState([]);
