@@ -5,7 +5,7 @@ const INITIAL_FAMILY_DATA = {
   email: "",
   isParent: true,
 };
-const NewFamilyForm = ({ addFamily }) => {
+const NewFamilyForm = ({ addMember }) => {
   const [familyFormData, setFamilyFormData] = useState(INITIAL_FAMILY_DATA);
 
   const handleFormChange = (e) => {
@@ -18,7 +18,7 @@ const NewFamilyForm = ({ addFamily }) => {
 
   const submitFamilyForm = (e) => {
     e.preventDefault();
-    addFamily(familyFormData);
+    addMember(familyFormData);
     setFamilyFormData(INITIAL_FAMILY_DATA);
   };
 
@@ -53,6 +53,6 @@ const NewFamilyForm = ({ addFamily }) => {
   );
 };
 NewFamilyForm.propTypes = {
-  addFamily: PropTypes.func.isRequired,
+  addMember: PropTypes.func.isRequired,
 };
 export default NewFamilyForm;

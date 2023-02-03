@@ -1,12 +1,14 @@
 import React from "react";
 // import {useState , useEffect} from "react";
 import RewardList from "../components/RewardList";
+import NewRewardForm from "../components/NewRewardForm";
 
 const MemberAccount = ({
   rewardList,
   deleteReward,
   selectChore,
   selectReward,
+  addReward,
 }) => {
   return (
     <div>
@@ -16,6 +18,7 @@ const MemberAccount = ({
         selectChore={selectChore}
         selectReward={selectReward}
       />
+      <NewRewardForm addReward={addReward} />
     </div>
   );
 };
