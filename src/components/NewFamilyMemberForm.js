@@ -5,7 +5,7 @@ const INITIAL_FAMILY_DATA = {
   email: "",
   isParent: true,
 };
-const NewFamilyForm = ({ addMember }) => {
+const NewFamilyForm = ({ addMember, createNewFamily }) => {
   const [familyFormData, setFamilyFormData] = useState(INITIAL_FAMILY_DATA);
 
   const handleFormChange = (e) => {
@@ -24,6 +24,7 @@ const NewFamilyForm = ({ addMember }) => {
 
   return (
     <div>
+      <button onClick={createNewFamily}>Create New Family</button>
       <form onSubmit={submitFamilyForm}>
         <label htmlFor="name">Name: </label>
         <input
@@ -54,5 +55,6 @@ const NewFamilyForm = ({ addMember }) => {
 };
 NewFamilyForm.propTypes = {
   addMember: PropTypes.func.isRequired,
+  createNewFamily: PropTypes.func.isRequired,
 };
 export default NewFamilyForm;

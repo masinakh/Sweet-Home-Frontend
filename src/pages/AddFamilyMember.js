@@ -1,12 +1,15 @@
-import React from 'react'
-import NewFamilyMemberForm from '../components/NewFamilyMemberForm'
+import React from "react";
+import NewFamilyMemberForm from "../components/NewFamilyMemberForm";
 
-const AddFamilyMember = ({addMember}) => {
+const AddFamilyMember = ({ addMember, createNewFamily }) => {
   return (
     <div>
-      <NewFamilyMemberForm addMember={addMember}/>
+      <NewFamilyMemberForm
+        addMember={addMember}
+        createNewFamily={createNewFamily}
+      />
     </div>
-  )
-}
+  );
+};
 
-export default AddFamilyMember
+export default AddFamilyMember;
