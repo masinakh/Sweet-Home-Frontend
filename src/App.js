@@ -242,8 +242,8 @@ function App() {
           element={
             <Home
               choreList={choreList}
-              familyList={familyList}
-              deleteChore={deleteChore}
+              //   familyList={familyList}
+              //   deleteChore={deleteChore}
             />
           }
         />
@@ -254,9 +254,9 @@ function App() {
           element={
             <MemberAccount
               rewardList={rewardList}
-              deleteReward={deleteReward}
-              selectChore={selectChore}
-              selectReward={selectReward}
+              // deleteReward={deleteReward}
+              // selectChore={selectChore}
+              // selectReward={selectReward}
             />
           }
         />
@@ -264,6 +264,6 @@ function App() {
       </Routes>
     </div>
   );
-}
+        }
 
 export default App;
