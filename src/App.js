@@ -78,7 +78,7 @@ function App() {
 
   // const getAllChores = () => {
   //   axios
-  //     .get(`${URL}/chores`)
+  //     .get(`${URL}/chores/${member.family_id}`)
   //     .then((res) => {
   //       const choreData = res.data.map((chore) => {
   //         return {
@@ -217,7 +217,7 @@ function App() {
   //     .catch((error) => console.log(error));
   // };
 
-  const updateMarkComplete = (choreToUpdate) => {
+  const markComplete = (choreToUpdate) => {
     // console.log("updateTask called");
     axios
     .patch(`${URL}/chores/${choreId}/markComplete`)
@@ -228,7 +228,7 @@ function App() {
           }
           return chore;
         });
-        setChoreList(updateMarkComplete);
+        setSelectedChore(updateMarkComplete);
       })
       .catch((err) => {
         console.log(err);
