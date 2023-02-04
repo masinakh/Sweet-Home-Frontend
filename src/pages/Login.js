@@ -1,20 +1,13 @@
 import React from "react";
 import "./Login.css";
 import axios from "axios";
-import { redirect } from "react-router-dom";
+import {Link} from "react-router-dom";
 
-const Login = () => {
-  const loginClickHandler = () => {
-    axios.get("http://127.0.0.1:5000/login").then((res) => {
-      // console.log(res.data);
-      // return redirect(res.data.url);
-      window.location.replace(res.data.url);
-    });
-  };
+const Login = ({createNewFamily}) => {
+  
 
   return (
     <>
-      <h1>SWEET HOME</h1>
       <img src="./images/images.jpeg" alt="sweet-home-logo" />
       <p>
         This App motivate kids to do chores and establish good habits and
@@ -23,13 +16,7 @@ const Login = () => {
         expectations by redeeming their points.
       </p>
       <div id="gSignInWrapper">
-        <span class="label">Sign in with:</span>
-        <div id="customBtn" class="customGPlusSignIn">
-          <button onClick={loginClickHandler}>
-            <span class="icon"></span>
-            <span class="buttonText">Google</span>
-          </button>
-        </div>
+          <Link to="/addMember" onClick={createNewFamily}>Sign UP</Link>
       </div>
     </>
   );

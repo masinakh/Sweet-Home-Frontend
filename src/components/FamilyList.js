@@ -1,4 +1,6 @@
 import PropTypes from "prop-types";
+import {Link} from "react-router-dom";
+
 const FamilyList = ({familyList, selectMember}) => {
 
   const familyNameList = [];
@@ -9,8 +11,8 @@ const FamilyList = ({familyList, selectMember}) => {
         onClick={() => {
           selectMember(member.id);
         }}
-      >
-        {member.name}
+      > 
+      <Link to="/home" > {member.name}</Link>
       </li>
     );
   }

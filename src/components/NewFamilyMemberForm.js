@@ -1,7 +1,7 @@
 import PropTypes from "prop-types";
 import { useState } from "react";
 
-const NewFamilyForm = ({ addMember, createNewFamily , familyId}) => {
+const NewFamilyForm = ({ addMember , familyId}) => {
   const INITIAL_FAMILY_DATA = {
     name: "",
     email: "",
@@ -26,7 +26,6 @@ const NewFamilyForm = ({ addMember, createNewFamily , familyId}) => {
 
   return (
     <div>
-      <button onClick={createNewFamily}>Create New Family</button>
       <form onSubmit={submitFamilyForm}>
         <label htmlFor="name">Name: </label>
         <input
