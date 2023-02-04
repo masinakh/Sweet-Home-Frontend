@@ -41,6 +41,8 @@ const NewRewardForm = ({ addReward }) => {
           value={rewardFormData.points}
           onChange={handleFormChange}
         ></input>
+        <br></br>
+        <button>Submit</button>
       </form>
     </div>
   );

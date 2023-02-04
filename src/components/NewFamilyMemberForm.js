@@ -1,11 +1,13 @@
 import PropTypes from "prop-types";
 import { useState } from "react";
-const INITIAL_FAMILY_DATA = {
-  name: "",
-  email: "",
-  isParent: true,
-};
-const NewFamilyForm = ({ addMember, createNewFamily }) => {
+
+const NewFamilyForm = ({ addMember, createNewFamily , familyId}) => {
+  const INITIAL_FAMILY_DATA = {
+    name: "",
+    email: "",
+    isParent: true,
+    familyId:familyId
+  };
   const [familyFormData, setFamilyFormData] = useState(INITIAL_FAMILY_DATA);
 
   const handleFormChange = (e) => {
@@ -49,6 +51,8 @@ const NewFamilyForm = ({ addMember, createNewFamily }) => {
           <option value="Parent">Parent</option>
           <option value="Child">Child</option>
         </select>
+        <br></br>
+        <button>Submit</button>
       </form>
     </div>
   );

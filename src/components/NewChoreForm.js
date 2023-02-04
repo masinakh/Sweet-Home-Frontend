@@ -5,6 +5,7 @@ const INITIAL_CHORE_DATA = {
   points: "",
 };
 const NewChoreForm = ({ addChore }) => {
+
   const [choreFormData, setChoreFormData] = useState(INITIAL_CHORE_DATA);
 
   const handleFormChange = (e) => {
@@ -41,6 +42,8 @@ const NewChoreForm = ({ addChore }) => {
           value={choreFormData.points}
           onChange={handleFormChange}
         ></input>
+        <br></br>
+        <button>Submit</button>
       </form>
     </div>
   );
