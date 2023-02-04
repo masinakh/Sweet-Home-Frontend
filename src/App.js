@@ -17,7 +17,7 @@ function App() {
   const [familyList, setFamilyList] = useState([]);
   const [rewardList, setRewardList] = useState([]);
   // const URL = "https://sweet-home-backend.herokuapp.com"
-  const URL = "https://127.0.0.1:5000";
+  const URL = "http://127.0.0.1:5000";
   // const choreList = [
   //   {
   //     id: 1,
@@ -233,13 +233,12 @@ function App() {
   //       console.log(err);
   //     });
   // };
-  console.log("hello");
 
   const createNewFamily = () => {
     axios
       .post(`${URL}/family`)
       .then((res) => {
-        console.log("Response from family route:", res);
+        console.log("Response from family route:", res.data.id);
       })
       .catch((err) => {
         console.log(err);
