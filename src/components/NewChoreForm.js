@@ -1,10 +1,12 @@
 import PropTypes from "prop-types";
 import { useState } from "react";
-const INITIAL_CHORE_DATA = {
-  title: "",
-  points: "",
-};
-const NewChoreForm = ({ addChore }) => {
+
+const NewChoreForm = ({ addChore, familyId }) => {
+  const INITIAL_CHORE_DATA = {
+    title: "",
+    points: "",
+    familyId:familyId
+  };
 
   const [choreFormData, setChoreFormData] = useState(INITIAL_CHORE_DATA);
 
@@ -50,6 +52,7 @@ const NewChoreForm = ({ addChore }) => {
 };
 NewChoreForm.propTypes = {
   addChore: PropTypes.func.isRequired,
+  familyId: PropTypes.number.isRequired,
 };
 
 export default NewChoreForm;

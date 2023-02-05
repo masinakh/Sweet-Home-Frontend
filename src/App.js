@@ -20,22 +20,22 @@ function App() {
   // const URL = "https://sweet-home-backend.herokuapp.com"
   const URL = "http://127.0.0.1:5000";
   
-  // const getAllChores = () => {
-  //   axios
-  //     .get(`${URL}/chores/${member.family_id}`)
-  //     .then((res) => {
-  //       const choreData = res.data.map((chore) => {
-  //         return {
-  //           ...chore,
-  //         };
-  //       });
-  //       setChoreList(choreData);
-  //     })
-  //     .catch((error) => {
-  //       console.log(error);
-  //     });
-  // };
-  // useEffect(getAllChores, []);
+  const getAllChores = () => {
+    axios
+      .get(`${URL}/chores/${familyId}`)
+      .then((res) => {
+        const choreData = res.data.map((chore) => {
+          return {
+            ...chore,
+          };
+        });
+        setChoreList(choreData);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  };
+  useEffect(getAllChores, [familyId]);
 
   // const getAllRewards = () => {
   //   axios
@@ -71,14 +71,14 @@ function App() {
   };
   useEffect(getAllFamily, [familyId]);
 
-  // const addChore= (newChoreData) => {
-  //   axios
-  //     .post(`${URL}/chores`, newChoreData)
-  //     .then(() => {
-  //       getAllChores();
-  //     })
-  //     .catch((error) => console.log(error));
-  // };
+  const addChore= (newChoreData) => {
+    axios
+      .post(`${URL}/chores`, newChoreData)
+      .then(() => {
+        getAllChores();
+      })
+      .catch((error) => console.log(error));
+  };
 
   // const addReward= (newRewardData) => {
   //   axios
@@ -90,20 +90,38 @@ function App() {
   // };
 
   const addMember= (newFamilyData) => {
-      axios
-        .post(`${URL}/members`, newFamilyData)
-        .then((res) => {
-          console.log(res.data)
-          getAllFamily();
-        })
-        .catch((error) => console.log(error));
+    axios
+      .post(`${URL}/members`, newFamilyData)
+      .then((res) => {
+        console.log(res.data)
+        getAllFamily();
+      })
+      .catch((error) => console.log(error));
     };
 
+  // const selectMember=(id, name, email, is_parent, family_id)=>{
+  //   const member ={id, name, email, is_parent, family_id}
+  //   setMember(member)
+  //   axios
+  //   .get(`${URL}/members/${id}`)
+  //   .then((res)=>{
+  //     console.log("*******",res.data.member)
+  //     // setMember(res.data.member)
+  //     // console.log(member)
+  //     setSelectedChore(member.chores)
+  //     setSelectedReward(member.rewards)
+  //   })
+  //   .catch((error) => console.log(error));
+  // }
+
+  
   const selectMember=(memberId)=>{
+    console.log(memberId)
     axios
     .get(`${URL}/members/${memberId}`)
     .then((res)=>{
-      setMember(res.data)
+      console.log("*******",res.data.member)
+      setMember(res.data.member)
       console.log(member)
       setSelectedChore(member.chores)
       setSelectedReward(member.rewards)
@@ -164,11 +182,10 @@ function App() {
   // };
 
   // const markComplete = (choreToUpdate) => {
-  //   // console.log("updateTask called");
   //   axios
   //   .patch(`${URL}/chores/${choreToUpdate.id}/markComplete`)
   //     .then(() => {
-  //       const updateMarkComplete = choreList.map((chore) => {
+  //       const updateMarkComplete = selectedChore.map((chore) => {
   //         if (chore.id === choreToUpdate.id) {
   //           return choreToUpdate;
   //         }
@@ -214,8 +231,10 @@ function App() {
           element={
             <Home
               choreList={choreList}
-                
-                // deleteChore={deleteChore}
+              addChore={addChore} 
+              member={member}
+              // deleteChore={deleteChore}
+              // selectChore={selectChore}
             />
           }
         />
@@ -227,6 +246,8 @@ function App() {
               // deleteReward={deleteReward}
               // selectChore={selectChore}
               // selectReward={selectReward}
+              //markComplete={markComplete}
+              //selectedChore={selectedChore}
             />
           }
         />

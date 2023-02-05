@@ -9,7 +9,7 @@ const FamilyList = ({familyList, selectMember}) => {
       <li
         key={member.id}
         onClick={() => {
-          selectMember(member.id);
+          selectMember(member.id, member.name, member.email, member.is_parent, member.family_id);
         }}
       > 
       <Link to="/home" > {member.name}</Link>

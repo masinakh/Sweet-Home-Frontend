@@ -11,6 +11,8 @@ const NewFamilyForm = ({ addMember , familyId}) => {
   const [familyFormData, setFamilyFormData] = useState(INITIAL_FAMILY_DATA);
 
   const handleFormChange = (e) => {
+  // fix the parent / child issue
+  // fix the first member dose not show
     const newFamilyData = {
       ...familyFormData,
       [e.target.name]: e.target.value,
@@ -47,8 +49,8 @@ const NewFamilyForm = ({ addMember , familyId}) => {
         <br />
         <label for="familyRole">This member is: </label>
         <select name="familyRole" id="parent" onChange={handleFormChange}>
-          <option value="Parent">Parent</option>
-          <option value="Child">Child</option>
+          <option value="parent">Parent</option>
+          <option value="child">Child</option>
         </select>
         <br></br>
         <button>Submit</button>
