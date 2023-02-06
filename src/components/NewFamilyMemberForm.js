@@ -1,7 +1,7 @@
 import PropTypes from "prop-types";
 import { useState } from "react";
 
-const NewFamilyForm = ({ addMember , familyId}) => {
+const NewFamilyMemberForm = ({ addMember , familyId}) => {
   const INITIAL_FAMILY_DATA = {
     name: "",
     email: "",
@@ -58,8 +58,8 @@ const NewFamilyForm = ({ addMember , familyId}) => {
     </div>
   );
 };
-NewFamilyForm.propTypes = {
+NewFamilyMemberForm.propTypes = {
   addMember: PropTypes.func.isRequired,
   createNewFamily: PropTypes.func.isRequired,
 };
-export default NewFamilyForm;
+export default NewFamilyMemberForm;
