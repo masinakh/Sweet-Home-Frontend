@@ -16,7 +16,7 @@ const Login = ({createNewFamily}) => {
         expectations by redeeming their points.
       </p>
       <div id="gSignInWrapper">
-          <Link to="/addMember" onClick={createNewFamily}>Sign UP</Link>
+          <Link to="/addMember"><button onClick={createNewFamily}>Sign UP</button></Link>
       </div>
     </>
   );

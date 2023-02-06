@@ -60,6 +60,6 @@ const NewFamilyMemberForm = ({ addMember , familyId}) => {
 };
 NewFamilyMemberForm.propTypes = {
   addMember: PropTypes.func.isRequired,
-  createNewFamily: PropTypes.func.isRequired,
+  familyId: PropTypes.number.isRequired,
 };
 export default NewFamilyMemberForm;
