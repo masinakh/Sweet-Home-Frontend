@@ -21,6 +21,7 @@ function App() {
   const URL = "http://127.0.0.1:5000";
   
   const getAllChores = () => {
+    console.log("we are in get all chores",familyId)
     axios
       .get(`${URL}/chores/${familyId}`)
       .then((res) => {
@@ -55,6 +56,7 @@ function App() {
   // useEffect(getAllRewards, []);
 
    const getAllFamily = () => {
+    console.log("we are inside getAllFamily",URL, familyId)
     axios
       .get(`${URL}/members/${familyId}`)
       .then((res) => {
@@ -69,7 +71,7 @@ function App() {
         console.log(error);
       });
   };
-  useEffect(getAllFamily, [familyId]);
+  // useEffect(getAllFamily, [familyId]);
 
   const addChore= (newChoreData) => {
     axios
@@ -90,6 +92,7 @@ function App() {
   // };
 
   const addMember= (newFamilyData) => {
+    console.log(newFamilyData)
     axios
       .post(`${URL}/members`, newFamilyData)
       .then((res) => {
@@ -116,7 +119,7 @@ function App() {
 
   
   const selectMember=(memberId)=>{
-    console.log(memberId)
+    // console.log(memberId)
     axios
     .get(`${URL}/members/${memberId}`)
     .then((res)=>{
@@ -203,7 +206,7 @@ function App() {
       .post(`${URL}/family`)
       .then((res) => {
         setFamilyId(res.data.id)
-        console.log("Response from family route:", res.data.id);
+        // console.log("Response from family route:", res.data.id);
       })
       .catch((err) => {
         console.log(err);
