@@ -47,10 +47,10 @@ const NewFamilyForm = ({ addMember , familyId}) => {
           onChange={handleFormChange}
         ></input>
         <br />
-        <label for="familyRole">This member is: </label>
-        <select name="familyRole" id="parent" onChange={handleFormChange}>
-          <option value="parent">Parent</option>
-          <option value="child">Child</option>
+        <label htmlFor="isParent">This member is: </label>
+        <select name="isParent" id="parent" onChange={handleFormChange}>
+          <option value="true">Parent</option>
+          <option value="false">Child</option>
         </select>
         <br></br>
         <button>Submit</button>
