@@ -3,7 +3,7 @@ import React from "react";
 import { useState, useEffect } from "react";
 import ChoreList from "../components/ChoreList";
 import NewChoreForm from "../components/NewChoreForm";
-import {Link} from "react-router-dom";
+import { Link } from "react-router-dom";
 
 const Home = ({ choreList, deleteChore, addChore, member, selectChore }) => {
   return (
@@ -16,7 +16,11 @@ const Home = ({ choreList, deleteChore, addChore, member, selectChore }) => {
         deleteChore={deleteChore}
         selectChore={selectChore}
       />
-      <NewChoreForm addChore={addChore} familyId={member.family_id} />
+      {member.is_parent ? (
+        <NewChoreForm addChore={addChore} familyId={member.family_id} />
+      ) : (
+        <div></div>
+      )}
     </div>
   );
 };

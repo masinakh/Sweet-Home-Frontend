@@ -27,7 +27,12 @@ const MemberAccount = ({
         deleteReward={deleteReward}
         selectReward={selectReward}
       />
-      <NewRewardForm addReward={addReward} familyId={member.family_id} />
+      {member.is_parent ? (
+        <NewRewardForm addReward={addReward} familyId={member.family_id} />
+      ) : (
+        <div></div>
+      )}
+
       <MemberSelectedRewards
         selectedReward={selectedReward}
         name={member.name}
