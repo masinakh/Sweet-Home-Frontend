@@ -175,22 +175,22 @@ function App() {
   //     .catch((error) => console.log(error));
   // };
 
-  // const markComplete = (choreToUpdate) => {
-  //   axios
-  //   .patch(`${URL}/chores/${choreToUpdate.id}/markComplete`)
-  //     .then(() => {
-  //       const updateMarkComplete = selectedChore.map((chore) => {
-  //         if (chore.id === choreToUpdate.id) {
-  //           return choreToUpdate;
-  //         }
-  //         return chore;
-  //       });
-  //       setSelectedChore(updateMarkComplete);
-  //     })
-  //     .catch((err) => {
-  //       console.log(err);
-  //     });
-  // };
+  const markComplete = (choreToUpdate) => {
+    axios
+    .patch(`${URL}/chores/${choreToUpdate.id}/mark_complete`)
+      .then(() => {
+        const updateMarkComplete = selectedChore.map((chore) => {
+          if (chore.id === choreToUpdate.id) {
+            return choreToUpdate;
+          }
+          return chore;
+        });
+        setSelectedChore(updateMarkComplete);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  };
 
   const createNewFamily = () => {
     axios
@@ -238,12 +238,11 @@ function App() {
           path="/memberAccount"
           element={
             <MemberAccount
-              rewardList={rewardList}
+              // rewardList={rewardList}
               // deleteReward={deleteReward}
-              // selectChore={selectChore}
               // selectReward={selectReward}
-              //markComplete={markComplete}
-              //selectedChore={selectedChore}
+              markComplete={markComplete}
+              selectedChore={selectedChore}
             />
           }
         />

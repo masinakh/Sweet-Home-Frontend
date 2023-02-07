@@ -7,7 +7,6 @@ import ChoresToDo from "../components/ChoresToDo";
 const MemberAccount = ({
   rewardList,
   deleteReward,
-  selectChore,
   selectReward,
   addReward,
   markComplete, 
@@ -15,14 +14,15 @@ const MemberAccount = ({
 }) => {
   return (
     <div>
+      <p>Welcome to your account</p>
+      <p>Chore To Do:</p>
       <ChoresToDo selectedChore={selectedChore} markComplete={markComplete}/>
-      <RewardList
+      {/* <RewardList
         rewardList={rewardList}
         deleteReward={deleteReward}
-        selectChore={selectChore}
         selectReward={selectReward}
       />
-      <NewRewardForm addReward={addReward} />
+      <NewRewardForm addReward={addReward} /> */}
     </div>
   );
 };
