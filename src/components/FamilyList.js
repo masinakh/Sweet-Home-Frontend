@@ -1,5 +1,6 @@
 import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
+import "./FamilyList.css";
 
 const FamilyList = ({ familyList, selectMember }) => {
   const familyNameList = [];
@@ -10,14 +11,15 @@ const FamilyList = ({ familyList, selectMember }) => {
         onClick={() => {
           selectMember(member.id);
         }}
+        className="button"
       >
-        <Link to="/home"> {member.name}</Link>
+        <Link to="/home" className="name-color"> {member.name}</Link>
       </li>
     );
   }
   return (
     <div>
-      <ul>{familyNameList}</ul>
+      <ul className="list-style-type">{familyNameList}</ul>
     </div>
   );
 };

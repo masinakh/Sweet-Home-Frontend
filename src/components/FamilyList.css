@@ -1,0 +1,28 @@
+.list-style-type {
+    list-style-type: none;
+    /* display: flex; */
+    /* flex-direction: column; */
+    /* justify-content:flex-start; */
+    margin-top: .25px;
+    margin-bottom: 30px;
+    margin-right: 10px;
+    column-gap: 30px;
+
+}
+
+.name-color {
+    color:white;
+    font-size:large;
+}
+
+.button {
+    background-color:rgba(54,108,226,1);
+    color: white;
+    padding: 16px 20px;
+    border: none;
+    cursor: pointer;
+    width: 100px;
+    border-radius: 5px;
+    text-align: center;
+    margin-top: 20px;
+}

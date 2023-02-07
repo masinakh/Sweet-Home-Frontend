@@ -4,12 +4,13 @@ import { useState, useEffect } from "react";
 import ChoreList from "../components/ChoreList";
 import NewChoreForm from "../components/NewChoreForm";
 import { Link } from "react-router-dom";
+import Nav from "../components/Nav";
 
 const Home = ({ choreList, deleteChore, addChore, member, selectChore }) => {
   return (
     <div>
-      <Link to="/memberAccount">My Account</Link>
-      <p>Welcome {member.name}</p>
+      <Nav member={member}></Nav>
+      {/* <Link to="/memberAccount">My Account</Link> */}
       <p>your total points is {member.points}</p>
       <ChoreList
         choreList={choreList}

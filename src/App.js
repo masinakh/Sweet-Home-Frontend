@@ -182,11 +182,18 @@ function App() {
       .then(() => {
         const updateMarkComplete = selectedChore.map((chore) => {
           if (chore.id === choreToUpdate.id) {
+            const updatedPoints = member.points + choreToUpdate.points
+            setMember({
+              ...member,
+              points:updatedPoints ,
+            });
             return choreToUpdate;
           }
           return chore;
         });
         setSelectedChore(updateMarkComplete);
+        
+
       })
       .catch((err) => {
         console.log(err);

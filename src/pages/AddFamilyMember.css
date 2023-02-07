@@ -1,0 +1,25 @@
+/* .background {
+    background-image: url("../../public/images/watchararitjan200800092.webp");
+    background-repeat: no-repeat;
+    background-size:150% 100%;
+    background-position:center;
+    background-position-x:-50px;
+   
+} */
+.container {
+   
+    margin-top: 60px; 
+    display:grid;
+    grid-template-columns:2fr 2fr 1fr ;
+}
+
+.family-form {
+    grid-column:2/5;
+    margin-right: 50px;
+}
+
+.family-list {
+    margin-top:50px;
+    grid-column:5/6;
+
+}

@@ -4,6 +4,7 @@ import RewardList from "../components/RewardList";
 import NewRewardForm from "../components/NewRewardForm";
 import ChoresToDo from "../components/ChoresToDo";
 import MemberSelectedRewards from "../components/MemberSelectedRewards";
+import Nav from "../components/Nav";
 
 const MemberAccount = ({
   rewardList,
@@ -18,7 +19,9 @@ const MemberAccount = ({
   console.log("hello ", member.familyId);
   return (
     <div>
+      <Nav member={member}></Nav>
       <p>Welcome to your account</p>
+      <p>your total points is {member.points}</p>
       <p>Chore To Do:</p>
       <ChoresToDo selectedChore={selectedChore} markComplete={markComplete} />
 
