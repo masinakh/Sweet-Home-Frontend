@@ -1,48 +1,46 @@
 import PropTypes from "prop-types";
 import { useState } from "react";
 
-const NewFamilyMemberForm = ({ addMember , familyId}) => {
+const NewFamilyMemberForm = ({ addMember, familyId }) => {
   const INITIAL_FAMILY_DATA = {
     name: "",
     email: "",
     isParent: null,
-    familyId:familyId
+    familyId: familyId,
   };
   const [familyFormData, setFamilyFormData] = useState(INITIAL_FAMILY_DATA);
 
   const handleFormChange = (e) => {
-    if (e.target.name=== "isParent" && e.target.value === "true"){
+    if (e.target.name === "isParent" && e.target.value === "true") {
       const newFamilyData = {
         ...familyFormData,
-        familyId:familyId,
+        familyId: familyId,
         isParent: true,
       };
-      console.log("in handleForm", newFamilyData)
+      console.log("in handleForm", newFamilyData);
       setFamilyFormData(newFamilyData);
-    } else if (e.target.name=== "isParent" && e.target.value === "false")
-    {
+    } else if (e.target.name === "isParent" && e.target.value === "false") {
       const newFamilyData = {
         ...familyFormData,
-        familyId:familyId,
+        familyId: familyId,
         isParent: false,
       };
-      console.log("in handleForm", newFamilyData)
+      console.log("in handleForm", newFamilyData);
       setFamilyFormData(newFamilyData);
     } else {
       const newFamilyData = {
         ...familyFormData,
-        familyId:familyId,
+        familyId: familyId,
         [e.target.name]: e.target.value,
       };
-      console.log("in handleForm", newFamilyData)
+      console.log("in handleForm", newFamilyData);
       setFamilyFormData(newFamilyData);
     }
-   
   };
 
   const submitFamilyForm = (e) => {
     e.preventDefault();
-    console.log("we are in submitFamilyForm",familyFormData)
+    console.log("we are in submitFamilyForm", familyFormData);
     addMember(familyFormData);
     setFamilyFormData(INITIAL_FAMILY_DATA);
   };

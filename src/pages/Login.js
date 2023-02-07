@@ -1,11 +1,10 @@
 import React from "react";
 import "./Login.css";
 import axios from "axios";
-import {Link} from "react-router-dom";
+import { Link } from "react-router-dom";
+import "./Login.css";
 
-const Login = ({createNewFamily}) => {
-  
-
+const Login = ({ createNewFamily }) => {
   return (
     <>
       <img src="./images/images.jpeg" alt="sweet-home-logo" />
@@ -16,7 +15,9 @@ const Login = ({createNewFamily}) => {
         expectations by redeeming their points.
       </p>
       <div id="gSignInWrapper">
-          <Link to="/addMember"><button onClick={createNewFamily}>Sign UP</button></Link>
+        <Link to="/addMember">
+          <button onClick={createNewFamily}>Sign UP</button>
+        </Link>
       </div>
     </>
   );
