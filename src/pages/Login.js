@@ -16,7 +16,7 @@ const Login = ({ createNewFamily }) => {
       </p>
       <div id="gSignInWrapper">
         <Link to="/addMember">
-          <button onClick={createNewFamily}>Sign UP</button>
+          <button onClick={createNewFamily}>Sign Up</button>
         </Link>
       </div>
     </>
