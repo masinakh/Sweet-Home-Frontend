@@ -1,5 +1,6 @@
 import PropTypes from "prop-types";
 import { useState } from "react";
+import "./NewFamilyMemberForm.css";
 
 const NewFamilyMemberForm = ({ addMember, familyId }) => {
   const INITIAL_FAMILY_DATA = {
@@ -46,34 +47,75 @@ const NewFamilyMemberForm = ({ addMember, familyId }) => {
   };
 
   return (
-    <div>
+    <div class="form-container">
       <form onSubmit={submitFamilyForm}>
-        <label htmlFor="name">Name: </label>
-        <input
-          type="text"
-          id="name"
-          name="name"
-          value={familyFormData.name}
-          onChange={handleFormChange}
-        ></input>
+        <div class="form-group row">
+          <label htmlFor="name" class="col-sm-2 col-form-label">
+            Name
+          </label>
+          <div class="col-sm-10">
+            <input
+              class="form-control"
+              type="text"
+              id="name"
+              name="name"
+              value={familyFormData.name}
+              onChange={handleFormChange}
+            ></input>
+          </div>
+        </div>
         <br></br>
-        <label htmlFor="email">Email: </label>
-        <input
-          type="text"
-          id="email"
-          name="email"
-          value={familyFormData.email}
-          onChange={handleFormChange}
-        ></input>
+
+        <div class="form-group row">
+          <label
+            htmlFor="email"
+            for="inputEmail3"
+            class="col-sm-2 col-form-label"
+          >
+            Email
+          </label>
+          <div class="col-sm-10">
+            <input
+              type="email"
+              id="inputEmail3"
+              class="form-control"
+              name="email"
+              value={familyFormData.email}
+              onChange={handleFormChange}
+            ></input>
+          </div>
+        </div>
+
         <br />
-        <label htmlFor="isParent">This member is: </label>
-        <select name="isParent" id="parent" onChange={handleFormChange}>
-          <option value="">Select an option</option>
-          <option value="true">Parent</option>
-          <option value="false">Child</option>
-        </select>
+
+        <div class="form-row align-items-center">
+          <div class="col-auto my-1">
+            <label htmlFor="isParent">This Member Is</label>
+            <select
+              class="custom-select mr-sm-2"
+              name="isParent"
+              // id="parent"
+              id="inlineFormCustomSelect"
+              onChange={handleFormChange}
+            >
+              <option value="" selected>
+                Select An Option
+              </option>
+              <option value="true">Parent</option>
+              <option value="false">Child</option>
+            </select>
+          </div>
+        </div>
+
         <br></br>
-        <button>Submit</button>
+
+        <div class="form-group row">
+          <div class="col-sm-10">
+            <button type="submit" class="btn btn-primary">
+              Submit
+            </button>
+          </div>
+        </div>
       </form>
     </div>
   );
