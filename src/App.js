@@ -45,21 +45,21 @@ function App() {
   };
   // useEffect(getAllChores, []);
 
-  // const getAllRewards = () => {
-  //   axios
-  //     .get(`${URL}/rewards/${member.family_id}`)
-  //     .then((res) => {
-  //       const rewardData = res.data.map((reward) => {
-  //         return {
-  //           ...reward,
-  //         };
-  //       });
-  //       setRewardList(rewardData);
-  //     })
-  //     .catch((error) => {
-  //       console.log(error);
-  //     });
-  // };
+  const getAllRewards = () => {
+    axios
+      .get(`${URL}/rewards/${member.family_id}`)
+      .then((res) => {
+        const rewardData = res.data.map((reward) => {
+          return {
+            ...reward,
+          };
+        });
+        setRewardList(rewardData);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  };
   // useEffect(getAllRewards, []);
 
   const getAllFamily = () => {
@@ -89,14 +89,15 @@ function App() {
       .catch((error) => console.log(error));
   };
 
-  // const addReward= (newRewardData) => {
-  //   axios
-  //     .post(`${URL}/rewards`, newRewardData)
-  //     .then(() => {
-  //       getAllRewards();
-  //     })
-  //     .catch((error) => console.log(error));
-  // };
+  const addReward = (newRewardData) => {
+    console.log(newRewardData);
+    axios
+      .post(`${URL}/rewards`, newRewardData)
+      .then(() => {
+        getAllRewards();
+      })
+      .catch((error) => console.log(error));
+  };
 
   const addMember = (newFamilyData) => {
     console.log(newFamilyData);
@@ -133,17 +134,17 @@ function App() {
       .catch((error) => console.log(error));
   };
 
-  // const deleteReward = (rewardId) => {
-  //   axios
-  //     .delete(`${URL}/rewards/${rewardId}`)
-  //     .then((res) => {
-  //       const newRewards = rewardList.filter(
-  //         (reward) => reward.id !== rewardId
-  //       );
-  //       setRewardList(newRewards);
-  //     })
-  //     .catch((error) => console.log(error));
-  // };
+  const deleteReward = (rewardId) => {
+    axios
+      .delete(`${URL}/rewards/${rewardId}`)
+      .then((res) => {
+        const newRewards = rewardList.filter(
+          (reward) => reward.id !== rewardId
+        );
+        setRewardList(newRewards);
+      })
+      .catch((error) => console.log(error));
+  };
 
   const selectChore = (choreId) => {
     axios
@@ -160,24 +161,24 @@ function App() {
       .catch((error) => console.log(error));
   };
 
-  // const selectReward = (rewardId) => {
-  //   axios
-  //     .patch(`${URL}/rewards/${rewardId}/${member.id}`)
-  //     .then(() => {
-  //       const newSelectedReward = [...selectReward];
-  //       for (const reward of rewardList) {
-  //         if (reward.id === rewardId) {
-  //           newSelectedReward.push(reward);
-  //         }
-  //       }
-  //       setSelectedReward(newSelectedReward);
-  //     })
-  //     .catch((error) => console.log(error));
-  // };
+  const selectReward = (rewardId) => {
+    axios
+      .patch(`${URL}/rewards/${rewardId}/${member.id}`)
+      .then(() => {
+        const newSelectedReward = [...selectedReward];
+        for (const reward of rewardList) {
+          if (reward.id === rewardId) {
+            newSelectedReward.push(reward);
+          }
+        }
+        setSelectedReward(newSelectedReward);
+      })
+      .catch((error) => console.log(error));
+  };
 
   const markComplete = (choreToUpdate) => {
     axios
-    .patch(`${URL}/chores/${choreToUpdate.id}/mark_complete`)
+      .patch(`${URL}/chores/${choreToUpdate.id}/mark_complete`)
       .then(() => {
         const updateMarkComplete = selectedChore.map((chore) => {
           if (chore.id === choreToUpdate.id) {
@@ -238,9 +239,12 @@ function App() {
           path="/memberAccount"
           element={
             <MemberAccount
-              // rewardList={rewardList}
-              // deleteReward={deleteReward}
-              // selectReward={selectReward}
+              selectedReward={selectedReward}
+              member={member}
+              addReward={addReward}
+              rewardList={rewardList}
+              deleteReward={deleteReward}
+              selectReward={selectReward}
               markComplete={markComplete}
               selectedChore={selectedChore}
             />

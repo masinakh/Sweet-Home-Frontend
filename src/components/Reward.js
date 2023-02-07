@@ -6,9 +6,13 @@ const Reward = ({ id, title, points, deleteReward, selectReward }) => {
   return (
     <div className="reward">
       <h4>{title}</h4>
-      <span>{points}</span>
-      <button onClick={() => selectReward(id)}>Select</button>
-      <button onClick={() => deleteReward(id)}>Delete</button>
+      <span>Points: {points}</span>
+      <button className="btn" onClick={() => selectReward(id)}>
+        Select
+      </button>
+      <button className="btn" onClick={() => deleteReward(id)}>
+        Delete
+      </button>
     </div>
   );
 };

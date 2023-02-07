@@ -1,10 +1,13 @@
 import PropTypes from "prop-types";
 import { useState } from "react";
-const INITIAL_REWARD_DATA = {
-  title: "",
-  points: "",
-};
-const NewRewardForm = ({ addReward }) => {
+
+const NewRewardForm = ({ addReward, familyId }) => {
+  console.log("I am in reward form", familyId);
+  const INITIAL_REWARD_DATA = {
+    title: "",
+    points: "",
+    familyId: familyId,
+  };
   const [rewardFormData, setRewardFormData] = useState(INITIAL_REWARD_DATA);
 
   const handleFormChange = (e) => {
@@ -49,6 +52,7 @@ const NewRewardForm = ({ addReward }) => {
 };
 NewRewardForm.propTypes = {
   addReward: PropTypes.func.isRequired,
+  familyId: PropTypes.number.isRequired,
 };
 
 export default NewRewardForm;
