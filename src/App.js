@@ -124,6 +124,14 @@ function App() {
       .catch((error) => console.log(error));
   };
 
+  const updateMember =(passwordId)=>{
+    const updateMemberData = {
+      ...member , 
+      family_id :passwordId, 
+    }
+    setMember(updateMemberData)
+  }
+
   const deleteChore = (choreId) => {
     axios
       .delete(`${URL}/chores/${choreId}`)
@@ -218,7 +226,7 @@ function App() {
   return (
     <div className="App">
       <Routes>
-        <Route path="/" element={<Login createNewFamily={createNewFamily} />} />
+        <Route path="/" element={<Login createNewFamily={createNewFamily} updateMember={updateMember} />}/>
         <Route
           path="/addMember"
           element={
