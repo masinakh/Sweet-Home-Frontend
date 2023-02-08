@@ -17,6 +17,8 @@ function App() {
     is_parent: true,
     name: "",
     points: 0,
+    chores: [],
+    rewards: [],
   });
   const [choreList, setChoreList] = useState([]);
   const [selectedChore, setSelectedChore] = useState([]);
@@ -62,10 +64,11 @@ function App() {
   };
   // useEffect(getAllRewards, []);
 
-  const getAllFamily = () => {
-    console.log("we are inside getAllFamily", URL, member.family_id);
+  const getAllFamily = (id = member.family_id) => {
+    console.log("we are inside getAllFamily", URL, id);
+
     axios
-      .get(`${URL}/members/${member.family_id}`)
+      .get(`${URL}/members/${id}`)
       .then((res) => {
         const memberData = res.data.map((member) => {
           return {
@@ -118,19 +121,22 @@ function App() {
         console.log("*******", res.data.member);
         setMember(res.data.member);
         // console.log("this is the member", member);
-        // setSelectedChore(member.chores);
-        // setSelectedReward(member.rewards);
+
+        setSelectedChore(member.chores);
+        setSelectedReward(member.rewards);
       })
       .catch((error) => console.log(error));
   };
 
-  const updateMember =(passwordId)=>{
-    const updateMemberData = {
-      ...member , 
-      family_id :passwordId, 
-    }
-    setMember(updateMemberData)
-  }
+  const updateMember = (passwordIdData) => {
+    console.log("passwordIdData Is ", passwordIdData);
+    const parseIntPassword = parseInt(passwordIdData.password);
+
+    console.log("This is updateMemberData:", parseIntPassword);
+    setMember({ ...member, family_id: parseIntPassword });
+    console.log("Member is", member);
+    getAllFamily(parseIntPassword);
+  };
 
   const deleteChore = (choreId) => {
     axios
@@ -190,18 +196,16 @@ function App() {
       .then(() => {
         const updateMarkComplete = selectedChore.map((chore) => {
           if (chore.id === choreToUpdate.id) {
-            const updatedPoints = member.points + choreToUpdate.points
+            const updatedPoints = member.points + choreToUpdate.points;
             setMember({
               ...member,
-              points:updatedPoints ,
+              points: updatedPoints,
             });
             return choreToUpdate;
           }
           return chore;
         });
         setSelectedChore(updateMarkComplete);
-        
-
       })
       .catch((err) => {
         console.log(err);
@@ -226,7 +230,15 @@ function App() {
   return (
     <div className="App">
       <Routes>
-        <Route path="/" element={<Login createNewFamily={createNewFamily} updateMember={updateMember} />}/>
+        <Route
+          path="/"
+          element={
+            <Login
+              createNewFamily={createNewFamily}
+              updateMember={updateMember}
+            />
+          }
+        />
         <Route
           path="/addMember"
           element={

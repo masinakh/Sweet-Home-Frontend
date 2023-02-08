@@ -3,6 +3,7 @@ import "./Login.css";
 import axios from "axios";
 import { Link } from "react-router-dom";
 import "./Login.css";
+import SignInForm from "../components/SignInForm";
 
 const Login = ({ createNewFamily, updateMember }) => {
   return (
@@ -18,6 +19,7 @@ const Login = ({ createNewFamily, updateMember }) => {
         <Link to="/addMember">
           <button onClick={createNewFamily}>Sign Up</button>
         </Link>
+        <SignInForm updateMember={updateMember} />
       </div>
     </div>
   );

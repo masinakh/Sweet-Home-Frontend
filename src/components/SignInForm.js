@@ -1,12 +1,14 @@
 import PropTypes from "prop-types";
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
-const SignInForm= ({}) => {
+const SignInForm = ({ updateMember }) => {
   const INITIAL_SignIn_DATA = {
-    password:""
+    password: "",
   };
 
   const [sighInFormData, setSignInFormData] = useState(INITIAL_SignIn_DATA);
+  const navigate = useNavigate();
 
   const handleFormChange = (e) => {
     const newSignInData = {
@@ -18,8 +20,9 @@ const SignInForm= ({}) => {
 
   const submitSignInForm = (e) => {
     e.preventDefault();
-    
+    updateMember(sighInFormData);
     setSignInFormData(INITIAL_SignIn_DATA);
+    navigate("/addmember");
   };
 
   return (
@@ -40,8 +43,7 @@ const SignInForm= ({}) => {
   );
 };
 SignInForm.propTypes = {
-  addChore: PropTypes.func.isRequired,
-  familyId: PropTypes.number.isRequired,
+  updateMember: PropTypes.func.isRequired,
 };
 
 export default SignInForm;
