@@ -13,34 +13,37 @@ const MemberAccount = ({
   deleteReward,
   selectReward,
   addReward,
-  markComplete,
-  selectedChore,
   member,
 }) => {
 
   return (
     <div className="memberAccountContainer">
-      <div className="nav"><h2>Welcome {member.name}</h2><Nav member={member}></Nav></div>
+       <div className="welcome">
+      <h2>Welcome {member.name}</h2>
+      </div>
+      <div className="nav">
+      <Nav member={member}></Nav>
+      </div>
       <div className="points"><h3>✨ YOUR POINTS: {member.points} ✨</h3></div>
-      <div className="choresToDo"><ChoresToDo selectedChore={selectedChore} markComplete={markComplete} /></div>
-      <div className="rewardList"><RewardList
+      
+      {/* <div className="rewardList"><RewardList
         rewardList={rewardList}
         deleteReward={deleteReward}
         selectReward={selectReward}
           />
-      </div>
-      <div className="newRewardForm">{member.is_parent ? (
+      </div> */}
+      {/* <div className="newRewardForm">{member.is_parent ? (
         <NewRewardForm addReward={addReward} familyId={member.family_id} />
       ) : (
         <div></div>
       )}
-      </div>
+      </div> */}
 
-      <div className="memberSelectedReward"><MemberSelectedRewards
+      {/* <div className="memberSelectedReward"><MemberSelectedRewards
         selectedReward={selectedReward}
         name={member.name}
       />
-      </div>
+      </div> */}
     </div>
   );
 };

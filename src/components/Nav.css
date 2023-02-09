@@ -3,12 +3,17 @@
     list-style-type: none;
     display: flex; 
     /* flex-direction: row; */
-    justify-content:space-between;
+    justify-content:right;
      /* margin-top: 15px; */
     margin-bottom: 10px;
     /* margin-right: 20px; */
     column-gap:20px;
 
+}
+.link{
+    color:black;
+    font-size: large;
+    
 }
 /* 
 h2 {

@@ -8,8 +8,8 @@ const Nav = ({member}) => {
     <div >
       {/* <h2>Welcome {member.name}</h2> */}
       <ul className="nav-list-style-type">
-        <li><Link to="/memberAccount">My Account</Link></li>
-        <li><Link to="/">Logout</Link></li>
+        <li><Link to="/memberAccount" className='link'>My Account</Link></li>
+        <li><Link to="/" className='link'>Logout</Link></li>
       </ul>
     </div>
   )

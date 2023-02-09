@@ -1,5 +1,6 @@
 import PropTypes from "prop-types";
 import { useState } from "react";
+import "./NewChoreForm.css";
 
 const NewChoreForm = ({ addChore, familyId }) => {
   const INITIAL_CHORE_DATA = {
@@ -26,9 +27,9 @@ const NewChoreForm = ({ addChore, familyId }) => {
 
   return (
     <div>
-      <h5>You can add new chores below:</h5>
-      <form onSubmit={submitChoreForm}>
-        <label htmlFor="title">Title: </label>
+      <h5 className="addChore">You can add new chores below:</h5>
+      <form onSubmit={submitChoreForm} class="my-form">
+        <label htmlFor="title">Chore: </label>
         <input
           type="text"
           id="title"

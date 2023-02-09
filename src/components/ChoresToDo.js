@@ -24,9 +24,11 @@ const ChoresToDo = ({selectedChore, markComplete}) => {
           key={chore.id}
           className="tasks__item"
         > 
-        {chore.title} - {chore.points}
+        <span style={{margin:30}}>{chore.title} - {chore.points}</span>
+        <span><button style={{color: 'black'}} className={`tasks__item__toggle ${buttonClass}`} onClick={(e) =>{flipWhencompleted(chore,e.target)}}>I did it!</button></span>
+        
         </li>
-        <button className={`tasks__item__toggle ${buttonClass}`} onClick={(e) =>{flipWhencompleted(chore,e.target)}}>I did it!</button>
+        
       </div>
     );
   }
@@ -34,7 +36,7 @@ const ChoresToDo = ({selectedChore, markComplete}) => {
   return (
     <div>
       <h4>Chore To Do:</h4>
-      <ul>{choresToDoList}</ul>
+      <ul className='list-style'>{choresToDoList}</ul>
     </div>
   )
 };

@@ -271,6 +271,8 @@ function App() {
               member={member}
               deleteChore={deleteChore}
               selectChore={selectChore}
+              markComplete={markComplete}
+              selectedChore={selectedChore}
             />
           }
         />
@@ -284,8 +286,7 @@ function App() {
               rewardList={rewardList}
               deleteReward={deleteReward}
               selectReward={selectReward}
-              markComplete={markComplete}
-              selectedChore={selectedChore}
+        
             />
           }
         />
