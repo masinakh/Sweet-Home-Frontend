@@ -1,0 +1,26 @@
+.memberAccountContainer{
+    display:grid;
+    grid-template:2fr 1fr ;
+}
+
+.choresToDo {
+    grid-row: 2/4;
+    grid-column: 1/2;
+}
+.rewardList {
+    grid-row:4/6;
+    grid-column:1/2;
+}
+
+.newRewardForm {
+    grid-row:5/6;
+    grid-column:2/3;
+
+}
+
+.memberSelectedReward {
+    grid-row:7/8;
+    grid-column:1/2;
+
+
+}

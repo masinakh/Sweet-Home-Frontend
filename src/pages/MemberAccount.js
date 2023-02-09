@@ -5,6 +5,7 @@ import NewRewardForm from "../components/NewRewardForm";
 import ChoresToDo from "../components/ChoresToDo";
 import MemberSelectedRewards from "../components/MemberSelectedRewards";
 import Nav from "../components/Nav";
+import "./MemberAccount.css"
 
 const MemberAccount = ({
   rewardList,
@@ -16,30 +17,30 @@ const MemberAccount = ({
   selectedChore,
   member,
 }) => {
-  console.log("hello ", member.familyId);
-  return (
-    <div>
-      <Nav member={member}></Nav>
-      <p>Welcome to your account</p>
-      <p>your total points is {member.points}</p>
-      <p>Chore To Do:</p>
-      <ChoresToDo selectedChore={selectedChore} markComplete={markComplete} />
 
-      <RewardList
+  return (
+    <div className="memberAccountContainer">
+      <div className="nav"><h2>Welcome {member.name}</h2><Nav member={member}></Nav></div>
+      <div className="points"><h3>✨ YOUR POINTS: {member.points} ✨</h3></div>
+      <div className="choresToDo"><ChoresToDo selectedChore={selectedChore} markComplete={markComplete} /></div>
+      <div className="rewardList"><RewardList
         rewardList={rewardList}
         deleteReward={deleteReward}
         selectReward={selectReward}
-      />
-      {member.is_parent ? (
+          />
+      </div>
+      <div className="newRewardForm">{member.is_parent ? (
         <NewRewardForm addReward={addReward} familyId={member.family_id} />
       ) : (
         <div></div>
       )}
+      </div>
 
-      <MemberSelectedRewards
+      <div className="memberSelectedReward"><MemberSelectedRewards
         selectedReward={selectedReward}
         name={member.name}
       />
+      </div>
     </div>
   );
 };

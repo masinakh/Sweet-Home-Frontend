@@ -1,15 +1,17 @@
-/* .list-style-type {  */
-    /* list-style-type: none; */
-    /* display: flex;  */
-    /* flex-direction: column; */
-    /* justify-content:flex-start; */
-    /* margin-top: 15px;
-    margin-bottom: 15px; */
+.nav-list-style-type { 
+    /* border: dashed; */
+    list-style-type: none;
+    display: flex; 
+    /* flex-direction: row; */
+    justify-content:space-between;
+     /* margin-top: 15px; */
+    margin-bottom: 10px;
     /* margin-right: 20px; */
-    /* column-gap:510px; */
+    column-gap:20px;
 
-/* } */
+}
 /* 
-div {
-    color:white;
+h2 {
+    border: dashed; 
 } */
+

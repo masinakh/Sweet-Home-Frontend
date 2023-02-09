@@ -33,6 +33,7 @@ const ChoresToDo = ({selectedChore, markComplete}) => {
   
   return (
     <div>
+      <h4>Chore To Do:</h4>
       <ul>{choresToDoList}</ul>
     </div>
   )
