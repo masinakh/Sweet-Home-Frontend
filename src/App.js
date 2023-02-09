@@ -26,8 +26,8 @@ function App() {
   const [familyList, setFamilyList] = useState([]);
   // const [familyId, setFamilyId] = useState(0);
   const [rewardList, setRewardList] = useState([]);
-  // const URL = "https://sweet-home-backend.herokuapp.com"
-  const URL = "http://127.0.0.1:5000";
+  const URL = "https://sweet-home-backend.herokuapp.com"
+  // const URL = "http://127.0.0.1:5000";
 
   const getAllChores = () => {
     // console.log("we are in get all chores", familyId);
