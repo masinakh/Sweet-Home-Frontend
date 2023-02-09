@@ -6,7 +6,7 @@ import "./AddFamilyMember.css"
 const AddFamilyMember = ({ addMember, familyId, familyList, selectMember }) => {
   return (
     <div className="container">
-      <div><p>Your Family Password is {familyId}</p></div>
+      <h3 className="family-password">Your Family Password is {familyId}</h3>
       <div className="family-form" ><NewFamilyMemberForm addMember={addMember} familyId={familyId} /></div>
       <div className="family-list" ><FamilyList familyList={familyList} selectMember={selectMember} /></div>
     </div>

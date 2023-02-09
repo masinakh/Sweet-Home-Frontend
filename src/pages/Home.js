@@ -5,23 +5,26 @@ import ChoreList from "../components/ChoreList";
 import NewChoreForm from "../components/NewChoreForm";
 import { Link } from "react-router-dom";
 import Nav from "../components/Nav";
+import "./Home.css"
+
 
 const Home = ({ choreList, deleteChore, addChore, member, selectChore }) => {
   return (
-    <div>
-      <Nav member={member}></Nav>
-      {/* <Link to="/memberAccount">My Account</Link> */}
-      <p>your total points is {member.points}</p>
-      <ChoreList
+    <div className="homeContainer">
+      <div className="nav"><Nav member={member}></Nav></div>
+      <div className="points"><h3>✨ YOUR POINTS: {member.points} ✨</h3></div>
+      <div className="choreList"><ChoreList
         choreList={choreList}
         deleteChore={deleteChore}
         selectChore={selectChore}
-      />
-      {member.is_parent ? (
+        />
+      </div>
+      <div className="newChoreForm">{member.is_parent ? (
         <NewChoreForm addChore={addChore} familyId={member.family_id} />
       ) : (
         <div></div>
       )}
+      </div>
     </div>
   );
 };

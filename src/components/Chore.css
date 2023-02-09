@@ -1,9 +1,10 @@
 .chore {
-    background-image: radial-gradient(circle, rgb(128, 208, 219), rgb(101, 177, 215));
+    background-image: radial-gradient(circle, rgb(173, 173, 56), rgb(85, 107, 47));
     /* background-image: linear-gradient(to right, rgb(74, 147, 96), rgb(223, 169, 94)); */
         height: 200px;
     /* background-color: bisque; */
-    margin: 2%;
-    padding: .25%;
+    margin: 5%;
+    padding: 6%;
     text-align: center;
+    border-radius: 30px;
     }

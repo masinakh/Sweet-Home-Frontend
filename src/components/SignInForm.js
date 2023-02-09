@@ -1,8 +1,10 @@
 import PropTypes from "prop-types";
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
+import "./SignInForm.css"
 
-const SignInForm = ({ updateMember }) => {
+
+const SignInForm = ({ updateMember, createNewFamily }) => {
   const INITIAL_SignIn_DATA = {
     password: "",
   };
@@ -37,13 +39,18 @@ const SignInForm = ({ updateMember }) => {
           onChange={handleFormChange}
         ></input>
         <br></br>
-        <button>SignIn</button>
+        <button style = {{margin:10}}>SignIn</button>
+        <Link to="/addMember">
+          <button onClick={createNewFamily}>Sign Up</button>
+        </Link>
       </form>
+      
     </div>
   );
 };
 SignInForm.propTypes = {
   updateMember: PropTypes.func.isRequired,
+  createNewFamily:PropTypes.func.isRequired,
 };
 
 export default SignInForm;

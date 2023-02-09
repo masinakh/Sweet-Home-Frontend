@@ -26,6 +26,7 @@ const NewChoreForm = ({ addChore, familyId }) => {
 
   return (
     <div>
+      <h5>You can add new chores below:</h5>
       <form onSubmit={submitChoreForm}>
         <label htmlFor="title">Title: </label>
         <input

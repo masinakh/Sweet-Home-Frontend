@@ -124,6 +124,8 @@ function App() {
 
         setSelectedChore(member.chores);
         setSelectedReward(member.rewards);
+        getAllChores();
+        getAllRewards();
       })
       .catch((error) => console.log(error));
   };
@@ -171,6 +173,7 @@ function App() {
           }
         }
         setSelectedChore(newSelectedChore);
+        setChoreList(choreList.filter(chore => chore.id !== choreId))
       })
       .catch((error) => console.log(error));
   };
@@ -183,6 +186,15 @@ function App() {
         for (const reward of rewardList) {
           if (reward.id === rewardId) {
             newSelectedReward.push(reward);
+            if (reward.points <= member.points){
+              const updatedPoints = member.points - reward.points;
+            setMember({
+              ...member,
+              points: updatedPoints,
+            });
+            } else {alert("Oops, your points is not enough. keep going!")}
+
+            
           }
         }
         setSelectedReward(newSelectedReward);
