@@ -46,6 +46,30 @@ const NewFamilyMemberForm = ({ addMember, familyId }) => {
     setFamilyFormData(INITIAL_FAMILY_DATA);
   };
 
+  const SubmitButton = () => {
+    if (familyFormData.name && familyFormData.email) {
+      return (
+        <div class="form-group row">
+          <div class="col-sm-10">
+            <button type="submit" class="btn btn-Success">
+              Submit
+            </button>
+          </div>
+        </div>
+      );
+    } else {
+      return (
+        <div class="form-group row">
+          <div class="col-sm-10">
+            <button type="submit" class="btn btn-Success" disabled>
+              Submit
+            </button>
+          </div>
+        </div>
+      );
+    }
+  };
+
   return (
     <div class="form-container">
       <form onSubmit={submitFamilyForm}>
@@ -109,13 +133,7 @@ const NewFamilyMemberForm = ({ addMember, familyId }) => {
 
         <br></br>
 
-        <div class="form-group row">
-          <div class="col-sm-10">
-            <button type="submit" class="btn btn-Success">
-              Submit
-            </button>
-          </div>
-        </div>
+        <SubmitButton />
       </form>
     </div>
   );
