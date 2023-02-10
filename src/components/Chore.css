@@ -1,10 +1,39 @@
 .chore {
     background-image: radial-gradient(circle, rgb(238, 238, 187), rgb(128, 151, 89));
     /* background-image: linear-gradient(to right, rgb(74, 147, 96), rgb(223, 169, 94)); */
-        height: 200px;
+        /* height: 200px; */
     /* background-color: bisque; */
-    margin: 5%;
-    padding: 6%;
-    text-align: center;
+    display: flex;
+    flex-direction: column;
+    width: 20rem;
+    height: 20rem;
+    margin: 1rem;
+    padding: 2rem;
     border-radius: 30px;
+    justify-content: space-between;
+    align-items: center;
+
     }
+    .chore .title{
+        margin : 0;
+
+    }
+    .chore .btn-container{
+        display: flex;
+
+    }
+    .chore .btn-container button{
+        background: white;
+        margin: 0.5rem;
+        border-radius: 20px;
+        border: 2px solid darkolivegreen;
+
+
+    }
+    .chore .btn-container button:hover{
+        background: black;
+        color:white;
+        border: 2px solid white;
+        
+    }
+    

@@ -12,15 +12,17 @@ const Chore = ({
 }) => {
   return (
     <div className="chore">
-      <h4>{title}</h4>
-      <span>Points: {points}</span>
+      <h4 class="title">{title}</h4>
+      <p>Points: {points}</p>
       <br />
-      <button className="btn" onClick={() => selectChore(id)}>
-        Select
-      </button>
-      <button className="btn" onClick={() => deleteChore(id)}>
-        Delete
-      </button>
+      <div class="btn-container">
+        <button className="btn" onClick={() => selectChore(id)}>
+          Select
+        </button>
+        <button className="btn" onClick={() => deleteChore(id)}>
+          Delete
+        </button>
+      </div>
     </div>
   );
 };

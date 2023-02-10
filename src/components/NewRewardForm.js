@@ -26,8 +26,9 @@ const NewRewardForm = ({ addReward, familyId }) => {
 
   return (
     <div>
+      <h5 className="addReward">You Can Add New Rewards Below:</h5>
       <form onSubmit={submitRewardForm}>
-        <label htmlFor="title">Title: </label>
+        <label htmlFor="title">Reward: </label>
         <input
           type="text"
           id="title"

@@ -6,7 +6,7 @@ const NewChoreForm = ({ addChore, familyId }) => {
   const INITIAL_CHORE_DATA = {
     title: "",
     points: "",
-    familyId:familyId
+    familyId: familyId,
   };
 
   const [choreFormData, setChoreFormData] = useState(INITIAL_CHORE_DATA);
@@ -27,7 +27,7 @@ const NewChoreForm = ({ addChore, familyId }) => {
 
   return (
     <div>
-      <h5 className="addChore">You can add new chores below:</h5>
+      <h5 className="addChore">You Can Add New Chores Below:</h5>
       <form onSubmit={submitChoreForm} class="my-form">
         <label htmlFor="title">Chore: </label>
         <input

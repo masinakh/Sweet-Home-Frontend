@@ -3,7 +3,7 @@ import Chore from "./Chore";
 import PropTypes from "prop-types";
 import "./ChoreList.css";
 
-const ChoreList = ({ choreList, deleteChore, selectChore}) => {
+const ChoreList = ({ choreList, deleteChore, selectChore }) => {
   const choreRenders = choreList.map((chore) => {
     return (
       <div className="box" key={chore.id}>
@@ -14,22 +14,18 @@ const ChoreList = ({ choreList, deleteChore, selectChore}) => {
           is_completed={chore.isCompleted}
           deleteChore={deleteChore}
           selectChore={selectChore}
-          
         />
       </div>
     );
   });
   return (
     <div>
-      <br></br>
-      <br></br>
-      <h2>
-      Select a chore from the chore list
-      </h2>
+      {/* <br></br>
+      <br></br> */}
+      <h2 class="chore-list__title">Select a chore from the chore list</h2>
       <div className="inner-chore-container">{choreRenders}</div>
     </div>
   );
-
 };
 ChoreList.propTypes = {
   choreList: PropTypes.arrayOf(
@@ -38,7 +34,7 @@ ChoreList.propTypes = {
       title: PropTypes.string.isRequired,
       points: PropTypes.number.isRequired,
       is_completed: PropTypes.bool.isRequired,
-      deleteChore:PropTypes.func.isRequired,
+      deleteChore: PropTypes.func.isRequired,
       selectChore: PropTypes.func.isRequired,
     })
   ),
