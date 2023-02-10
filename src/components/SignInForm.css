@@ -1,5 +1,6 @@
-button {
-    background-color:darkolivegreen;
+.btn-signInForm button {
+  
+  background-color:rgb(120, 148, 71);
     color: white;
     padding: 16px 20px;
     border: none;
@@ -8,4 +9,14 @@ button {
     border-radius: 5px;
     text-align: center;
     margin-top: 20px;
+    font-weight: bold;
   }
+  .btn-signInForm button:hover{
+    background: rgb(108, 124, 80);
+    color:white;
+    border: 2px solid white;
+    
+}
+.password label{
+  font-weight:800;
+}

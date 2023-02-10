@@ -36,7 +36,13 @@ const Home = ({
           </div>
         </div>
         <div className="layout">
-          <p>✨ YOUR POINTS: {member.points} ✨</p>
+          <button>
+            ✨
+            <Link to="/memberAccount" className="link">
+              REDEEM YOUR POINTS {member.points}
+            </Link>
+            ✨
+          </button>
           <div className="choresToDo">
             <ChoresToDo
               selectedChore={selectedChore}
