@@ -20,12 +20,11 @@
     }
     .chore .btn-container{
         display: flex;
-        margin-top:-2rem;
 
     }
     .chore .btn-container button{
         background: white;
-        margin: 0.5rem ;    
+        margin: 0.5rem;
         border-radius: 20px;
         border: 2px solid darkolivegreen;
 

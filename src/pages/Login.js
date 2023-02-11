@@ -1,8 +1,5 @@
 import React from "react";
 import "./Login.css";
-import axios from "axios";
-import { Link } from "react-router-dom";
-import "./Login.css";
 import SignInForm from "../components/SignInForm";
 
 const Login = ({ createNewFamily, updateMember }) => {
@@ -16,9 +13,10 @@ const Login = ({ createNewFamily, updateMember }) => {
         expectations by redeeming their points.
       </p>
       <div id="gSignInWrapper">
-        
-        <SignInForm updateMember={updateMember} createNewFamily={createNewFamily} />
-        
+        <SignInForm
+          updateMember={updateMember}
+          createNewFamily={createNewFamily}
+        />
       </div>
     </div>
   );

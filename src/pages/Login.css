@@ -1,5 +1,4 @@
 
-  
   img {
     display: block;
     margin: 0 auto;
@@ -9,15 +8,13 @@
   }
   
   p {
-    /* color: red; */
     text-align: center;
     font-size: 18px;
-    margin-top: 50px;
-    margin-bottom: 100px;
+    margin-top: 20px;
+    margin-bottom: 20px;
     width: 8em;
     margin-left: 100px;
     margin-right: 100px;
-
     line-height: 2;
   }
   
@@ -26,9 +23,6 @@
    text-align: center;
    margin-left: auto;
     margin-right: auto;
-   font-family:'Times New Roman', Times, serif;
-   font-weight:bolder;
-   font-size:x-large;
   }
 
   
@@ -37,7 +31,7 @@
     justify-content: center;
   }
   
-/* .btn-signInForm button {
+  button {
     background-color:rgba(54,108,226,1);
     color: white;
     padding: 16px 20px;
@@ -48,6 +42,6 @@
     text-align: center;
     margin-top: 20px;
   }
-   */
+  
 
   

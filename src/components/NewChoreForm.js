@@ -29,25 +29,27 @@ const NewChoreForm = ({ addChore, familyId }) => {
     <div>
       <h5 className="addChore">You Can Add New Chores Below:</h5>
       <form onSubmit={submitChoreForm} class="my-form">
-        <label htmlFor="title">Chore: </label>
-        <input
-          type="text"
-          id="title"
-          name="title"
-          value={choreFormData.title}
-          onChange={handleFormChange}
-        ></input>
-        <br></br>
-        <label htmlFor="points">Points: </label>
-        <input
-          type="Numeric"
-          id="points"
-          name="points"
-          value={choreFormData.points}
-          onChange={handleFormChange}
-        ></input>
-        <br></br>
-        <button>Submit</button>
+        <div class="my-form__elements">
+          <label htmlFor="title">Chore: </label>
+          <input
+            type="text"
+            id="title"
+            name="title"
+            value={choreFormData.title}
+            onChange={handleFormChange}
+          ></input>
+
+          <label htmlFor="points">Points: </label>
+          <input
+            type="Numeric"
+            id="points"
+            name="points"
+            value={choreFormData.points}
+            onChange={handleFormChange}
+          ></input>
+        </div>
+
+        <button class="my-form__btn">Submit</button>
       </form>
     </div>
   );

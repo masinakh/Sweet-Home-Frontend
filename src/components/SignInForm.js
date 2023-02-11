@@ -29,23 +29,19 @@ const SignInForm = ({ updateMember, createNewFamily }) => {
   return (
     <div>
       <form onSubmit={submitSignInForm}>
-        <div class="password">
-          <label htmlFor="password">Password:</label>
-          <input
-            type="text"
-            id="password"
-            name="password"
-            value={sighInFormData.password}
-            onChange={handleFormChange}
-          ></input>
-        </div>
+        <label htmlFor="password">Password:</label>
+        <input
+          type="text"
+          id="password"
+          name="password"
+          value={sighInFormData.password}
+          onChange={handleFormChange}
+        ></input>
         <br></br>
-        <div class="btn-signInForm">
-          <button style={{ margin: 10 }}>SignIn</button>
-          <Link to="/addMember">
-            <button onClick={createNewFamily}>SignUp</button>
-          </Link>
-        </div>
+        <button style={{ margin: 10 }}>SignIn</button>
+        <Link to="/addMember">
+          <button onClick={createNewFamily}>SignUp</button>
+        </Link>
       </form>
     </div>
   );

@@ -2,11 +2,12 @@ import React from "react";
 import Reward from "./Reward";
 import PropTypes from "prop-types";
 import "./RewardList.css";
+import "./ChoreList.css";
 
 const RewardList = ({ rewardList, deleteReward, selectReward }) => {
   const RewardRenders = rewardList.map((reward) => {
     return (
-      <div key={reward.id}>
+      <div className="box" key={reward.id}>
         <Reward
           id={reward.id}
           title={reward.title}
@@ -19,8 +20,8 @@ const RewardList = ({ rewardList, deleteReward, selectReward }) => {
   });
   return (
     <div>
-      <h2>Select a Reward from the reward list</h2>
-      <div className="inner-reward-container">{RewardRenders}</div>
+      <h2 class="chore-list__title">Select A Reward From The Reward List</h2>
+      <div className="inner-chore-container">{RewardRenders}</div>
     </div>
   );
 };

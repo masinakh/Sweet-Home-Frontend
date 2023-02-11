@@ -1,11 +1,9 @@
 import React from "react";
-// import {useState , useEffect} from "react";
 import RewardList from "../components/RewardList";
 import NewRewardForm from "../components/NewRewardForm";
-import ChoresToDo from "../components/ChoresToDo";
 import MemberSelectedRewards from "../components/MemberSelectedRewards";
 import Nav from "../components/Nav";
-import "./MemberAccount.css";
+import "./Home.css";
 
 const MemberAccount = ({
   rewardList,
@@ -16,37 +14,42 @@ const MemberAccount = ({
   member,
 }) => {
   return (
-    <div className="memberAccountContainer">
-      <div className="welcome">
-        <h2>Welcome {member.name}</h2>
-      </div>
+    <div>
       <div className="nav">
+        <div className="welcome">
+          <h2>Welcome {member.name}</h2>
+        </div>
         <Nav member={member}></Nav>
       </div>
-      <div className="points">
-        <h3>✨ YOUR POINTS: {member.points} ✨</h3>
-      </div>
-
-      <div className="rewardList">
-        <RewardList
-          rewardList={rewardList}
-          deleteReward={deleteReward}
-          selectReward={selectReward}
-        />
-      </div>
-      <div className="newRewardForm">
-        {member.is_parent ? (
-          <NewRewardForm addReward={addReward} familyId={member.family_id} />
-        ) : (
-          <div></div>
-        )}
-      </div>
-
-      <div className="memberSelectedReward">
-        <MemberSelectedRewards
-          selectedReward={selectedReward}
-          name={member.name}
-        />
+      <div className="homeContainer">
+        <div>
+          <div className="choreList">
+            <RewardList
+              rewardList={rewardList}
+              deleteReward={deleteReward}
+              selectReward={selectReward}
+            />
+          </div>
+        </div>
+        <div className="layout">
+          <p class="layout__title">✨ YOUR POINTS: {member.points} ✨</p>
+          <div className="choresToDo">
+            <MemberSelectedRewards
+              selectedReward={selectedReward}
+              name={member.name}
+            />
+          </div>
+          <div className="newChoreForm">
+            {member.is_parent ? (
+              <NewRewardForm
+                addReward={addReward}
+                familyId={member.family_id}
+              />
+            ) : (
+              <div></div>
+            )}
+          </div>
+        </div>
       </div>
     </div>
   );

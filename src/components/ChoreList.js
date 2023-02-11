@@ -20,8 +20,6 @@ const ChoreList = ({ choreList, deleteChore, selectChore }) => {
   });
   return (
     <div>
-      {/* <br></br>
-      <br></br> */}
       <h2 class="chore-list__title">Select a chore from the chore list</h2>
       <div className="inner-chore-container">{choreRenders}</div>
     </div>

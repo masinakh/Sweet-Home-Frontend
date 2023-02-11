@@ -1,6 +1,5 @@
 import React from "react";
 // import PropTypes from "prop-types";
-import { useState, useEffect } from "react";
 import ChoreList from "../components/ChoreList";
 import NewChoreForm from "../components/NewChoreForm";
 import ChoresToDo from "../components/ChoresToDo";
@@ -36,13 +35,9 @@ const Home = ({
           </div>
         </div>
         <div className="layout">
-          <button>
-            ✨
-            <Link to="/memberAccount" className="link">
-              REDEEM YOUR POINTS {member.points}
-            </Link>
-            ✨
-          </button>
+          <Link to="/memberAccount" class="layout__title">
+            ✨REDEEM YOUR POINTS {member.points} ✨
+          </Link>
           <div className="choresToDo">
             <ChoresToDo
               selectedChore={selectedChore}

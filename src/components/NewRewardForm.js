@@ -1,5 +1,6 @@
 import PropTypes from "prop-types";
 import { useState } from "react";
+import "./NewChoreForm.css";
 
 const NewRewardForm = ({ addReward, familyId }) => {
   console.log("I am in reward form", familyId);
@@ -26,27 +27,27 @@ const NewRewardForm = ({ addReward, familyId }) => {
 
   return (
     <div>
-      <h5 className="addReward">You Can Add New Rewards Below:</h5>
-      <form onSubmit={submitRewardForm}>
-        <label htmlFor="title">Reward: </label>
-        <input
-          type="text"
-          id="title"
-          name="title"
-          value={rewardFormData.title}
-          onChange={handleFormChange}
-        ></input>
-        <br></br>
-        <label htmlFor="points">Points: </label>
-        <input
-          type="Numeric"
-          id="points"
-          name="points"
-          value={rewardFormData.points}
-          onChange={handleFormChange}
-        ></input>
-        <br></br>
-        <button>Submit</button>
+      <h5 className="addChore">You Can Add New Rewards Below:</h5>
+      <form onSubmit={submitRewardForm} class="my-form">
+        <div class="my-form__elements">
+          <label htmlFor="title">Reward: </label>
+          <input
+            type="text"
+            id="title"
+            name="title"
+            value={rewardFormData.title}
+            onChange={handleFormChange}
+          ></input>
+          <label htmlFor="points">Points: </label>
+          <input
+            type="Numeric"
+            id="points"
+            name="points"
+            value={rewardFormData.points}
+            onChange={handleFormChange}
+          ></input>
+        </div>
+        <button class="my-form__btn">Submit</button>
       </form>
     </div>
   );

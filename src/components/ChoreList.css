@@ -1,6 +1,10 @@
 .inner-chore-container {
-  display: grid;
-  grid-template: 1fr 1fr 1fr / 1fr 1fr 1fr;
+  display: flex;
+  /* grid-template: 1fr 1fr 1fr / 1fr 1fr 1fr; */
+  align-items: center;
+  justify-content:flex-start ;
+  flex-wrap: wrap;
+ 
 }
 .chore-list__title{
   margin: 0;
