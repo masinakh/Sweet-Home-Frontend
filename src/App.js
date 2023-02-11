@@ -215,7 +215,7 @@ function App() {
                   points: updatedPoints,
                 });
         }}
-        const updateMarkComplete = selectedChore.filter(chore => chore.id !=choreToUpdate.id )
+        const updateMarkComplete = selectedChore.filter(chore => chore.id !==choreToUpdate.id )
         // const updateMarkComplete = selectedChore.map((chore) => {
         //   if (chore.id === choreToUpdate.id) {
         //     const updatedPoints = member.points + choreToUpdate.points;
