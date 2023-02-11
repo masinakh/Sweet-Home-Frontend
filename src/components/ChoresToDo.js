@@ -24,7 +24,7 @@ const ChoresToDo = ({selectedChore, markComplete}) => {
           key={chore.id}
           className="tasks__item"
         > 
-        <span style={{margin:30}}>{chore.title} - {chore.points}</span>
+        <span style={{margin:30}}>{chore.title} / {chore.points} Points</span>
         <span><button style={{color: 'black'}} className={`tasks__item__toggle ${buttonClass}`} onClick={(e) =>{flipWhencompleted(chore,e.target)}}>I did it!</button></span>
         
         </li>

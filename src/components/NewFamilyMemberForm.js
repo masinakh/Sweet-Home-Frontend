@@ -6,7 +6,7 @@ const NewFamilyMemberForm = ({ addMember, familyId }) => {
   const INITIAL_FAMILY_DATA = {
     name: "",
     email: "",
-    isParent: null,
+    isParent: "",
     familyId: familyId,
   };
   const [familyFormData, setFamilyFormData] = useState(INITIAL_FAMILY_DATA);
@@ -116,6 +116,7 @@ const NewFamilyMemberForm = ({ addMember, familyId }) => {
           <div class="col-auto my-1">
             <label htmlFor="isParent">This Member Is</label>
             <select
+              value={familyFormData.isParent}
               class="custom-select mr-sm-2"
               name="isParent"
               // id="parent"

@@ -122,8 +122,9 @@ function App() {
         setMember(res.data.member);
         // console.log("this is the member", member);
         console.log("inside select member");
-        setSelectedChore(member.chores);
-        setSelectedReward(member.rewards);
+        const unCompletedSelectedChores =res.data.member.chores.filter(chore => chore.is_completed === false) 
+        setSelectedChore(unCompletedSelectedChores);
+        setSelectedReward(res.data.member.rewards);
         getAllChores();
         getAllRewards();
       })
@@ -185,8 +186,8 @@ function App() {
         const newSelectedReward = [...selectedReward];
         for (const reward of rewardList) {
           if (reward.id === rewardId) {
-            newSelectedReward.push(reward);
             if (reward.points <= member.points) {
+              newSelectedReward.push(reward);
               const updatedPoints = member.points - reward.points;
               setMember({
                 ...member,
@@ -206,23 +207,34 @@ function App() {
     axios
       .patch(`${URL}/chores/${choreToUpdate.id}/mark_complete`)
       .then(() => {
-        const updateMarkComplete = selectedChore.map((chore) => {
+        for (const chore in selectedChore){
           if (chore.id === choreToUpdate.id) {
-            const updatedPoints = member.points + choreToUpdate.points;
-            setMember({
-              ...member,
-              points: updatedPoints,
-            });
-            return choreToUpdate;
-          }
-          return chore;
-        });
+                const updatedPoints = member.points + choreToUpdate.points;
+                setMember({
+                  ...member,
+                  points: updatedPoints,
+                });
+        }}
+        const updateMarkComplete = selectedChore.filter(chore => chore.id !=choreToUpdate.id )
+        // const updateMarkComplete = selectedChore.map((chore) => {
+        //   if (chore.id === choreToUpdate.id) {
+        //     const updatedPoints = member.points + choreToUpdate.points;
+        //     setMember({
+        //       ...member,
+        //       points: updatedPoints,
+        //     });
+        //     return choreToUpdate;
+        //   }
+        //   return chore;
+        // });
         setSelectedChore(updateMarkComplete);
+        console.log("updated chore list");
       })
       .catch((err) => {
         console.log(err);
       });
   };
+
 
   const createNewFamily = () => {
     axios
