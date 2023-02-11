@@ -26,7 +26,7 @@ function App() {
   const [familyList, setFamilyList] = useState([]);
   // const [familyId, setFamilyId] = useState(0);
   const [rewardList, setRewardList] = useState([]);
-  const URL = "https://sweet-home-backend.herokuapp.com"
+  const URL = "https://sweet-home-backend.herokuapp.com";
   // const URL = "http://127.0.0.1:5000";
 
   const getAllChores = () => {
@@ -121,7 +121,7 @@ function App() {
         console.log("*******", res.data.member);
         setMember(res.data.member);
         // console.log("this is the member", member);
-
+        console.log("inside select member");
         setSelectedChore(member.chores);
         setSelectedReward(member.rewards);
         getAllChores();
@@ -173,7 +173,7 @@ function App() {
           }
         }
         setSelectedChore(newSelectedChore);
-        setChoreList(choreList.filter(chore => chore.id !== choreId))
+        setChoreList(choreList.filter((chore) => chore.id !== choreId));
       })
       .catch((error) => console.log(error));
   };
@@ -186,15 +186,15 @@ function App() {
         for (const reward of rewardList) {
           if (reward.id === rewardId) {
             newSelectedReward.push(reward);
-            if (reward.points <= member.points){
+            if (reward.points <= member.points) {
               const updatedPoints = member.points - reward.points;
-            setMember({
-              ...member,
-              points: updatedPoints,
-            });
-            } else {alert("Oops, your points is not enough. keep going!")}
-
-            
+              setMember({
+                ...member,
+                points: updatedPoints,
+              });
+            } else {
+              alert("Oops, your points is not enough. keep going!");
+            }
           }
         }
         setSelectedReward(newSelectedReward);
@@ -286,7 +286,6 @@ function App() {
               rewardList={rewardList}
               deleteReward={deleteReward}
               selectReward={selectReward}
-        
             />
           }
         />
