@@ -126,7 +126,7 @@ const NewFamilyMemberForm = ({ addMember, familyId }) => {
               <option value="" selected>
                 Select An Option
               </option>
-              <option value="true">Parent</option>
+              <option value="true">Parent/Guardian</option>
               <option value="false">Child</option>
             </select>
           </div>
