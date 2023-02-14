@@ -207,7 +207,7 @@ function App() {
     axios
       .patch(`${URL}/chores/${choreToUpdate.id}/mark_complete`)
       .then(() => {
-        for (const chore in selectedChore){
+        for (const chore of selectedChore){
           if (chore.id === choreToUpdate.id) {
                 const updatedPoints = member.points + choreToUpdate.points;
                 setMember({
